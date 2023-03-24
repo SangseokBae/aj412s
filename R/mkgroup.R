@@ -12,13 +12,13 @@ colnames(groupIndex) <-c('grouping')
 
 for(i in 1:n) {
   for(j in 1:m) {
-    if( is.na(target_variable[i]) ) { groupIndex$grouping[i] <- -9999}
+    if( is.na(target_variable[i]) ) { groupIndex$grouping[i] <- -99998888}
 	else if( target_variable[i] < CuttingNumber[j] ) {
 	groupIndex$grouping[i] <- j
 	break}
 	}
 if(is.na(groupIndex$grouping[i])) {groupIndex$grouping[i]<-(m+1)}
-if(groupIndex$grouping[i]==-9999) {groupIndex$grouping[i]<-NA}
+if(groupIndex$grouping[i]==-99998888) {groupIndex$grouping[i]<-NA}
 }
 
 return(groupIndex)
