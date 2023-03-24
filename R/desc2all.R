@@ -14,6 +14,7 @@ cat(" #####################   ","\n")
 cat(" ##  입력코드: desc2all(Adata, k) k는 0을 제외한 숫자 ","\n")
 cat(" ##  => 개별 변수별로 NA만 제거 후, 기초통계량을 계산 ","\n")
 cat(" #####################   ","\n")
+cat(" ##  자료수   NA갯수   Median   Mean   St.Dev   Q1   Q2   Q3   Min   Max  ","\n")
 cat("    ","\n")
 
 Adata<-as.data.frame(Adata)
@@ -103,6 +104,7 @@ cat(" ##  NA/Inf/-Inf 레코드는 제외하지 않음 ","\n")
 cat(" ##  개별 변수별로 NA만 제거 후, 변수별로 기초통계량을 계산 ","\n")
 cat(" ##  기술통계 결과 저장 시 설명문은 포함되지 않음   ","\n")
 cat(" #####################   ","\n")
+cat(" ##  자료수   NA갯수   Median   Mean   St.Dev   Q1   Q2   Q3   Min   Max  ","\n")
 cat("    ","\n")
 
 Adata<-as.data.frame(Adata)
@@ -163,6 +165,7 @@ Bdata<-as.data.frame(Bdata)
 nc2<-ncol(Bdata)
 index<-c(1:nc2)
 Bdata[ , index] <- lapply( Bdata[ , index], as.numeric )
+
 
 rownames(Bdata)[1] <- c('  자료수')
 rownames(Bdata)[2] <- c('  NA갯수')

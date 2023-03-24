@@ -22,6 +22,7 @@ cat("data5 <- matrix( seq(1, 12, 1), ncol=2 , byrow=F)  # 데이터포맷 matrix
 cat("data6 <- as.data.frame(data5)  # 데이터포맷 변경 matrix -> data.frame ", '\n')
 cat("data7 <- as.vector(data5)  # 데이터포맷 변경 matrix -> vector ", '\n')
 
+cat("  ", '\n')
 invisible(readline(prompt="Press [enter] to continue"))
 
 cat("# 미싱데이터 처리 및 레코드값 변경  ", '\n')

@@ -1,11 +1,10 @@
 Package: aj412s
 Type: Package
-Title: What the Package Does (Title Case)
-Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Title:aj412s
+Version: 0.0.2301
+Author: Sangseok Bae
+Maintainer: <ssb9018@ajou.ac.kr>
+Description: Package for the class 'Statistics for Public Administration and Data Analysis'
+License: GPL-v3.0
 Encoding: UTF-8
 LazyData: true

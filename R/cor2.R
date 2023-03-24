@@ -19,7 +19,8 @@ cat('#############', '\n')
  tempx<-tempx[tempx$x != -Inf, ]
  tempx<-tempx[tempx$y != Inf, ]
  tempx<-tempx[tempx$y != -Inf, ]
- cat('selection있음. NA/Inf/-Inf제거 후의 자료수 :', nrow(tempx), '\n')
- cat('selection이 고려되고 NA/Inf/-Inf제거 후의 자료로 구한 상관계수', '\n')
+ tempx<-tempx[tempx$y != '', ]
+ cat('selection있음. NA/Inf/-Inf/Blank제거 후의 자료수 :', nrow(tempx), '\n')
+ cat('selection이 고려되고 NA/Inf/-Inf/Blank제거 후의 자료로 구한 상관계수', '\n')
  answer <- cor(tempx$x, tempx$y)
 return(answer) }
