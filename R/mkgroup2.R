@@ -17,7 +17,7 @@ mkgroup2<-function(target_variable, CuttingNumber) {
       if( is.na(target_variable[i]) ) { groupIndex$grouping[i] <- -9999}
       else if( target_variable[i] < CuttingNumber[j] ) {
         groupIndex$grouping[i] <- j
-        next}
+        break}
     }
     if(is.na(groupIndex$grouping[i])) {groupIndex$grouping[i]<-(m+1)}
     if(groupIndex$grouping[i]==-9999) {groupIndex$grouping[i]<-NA}
