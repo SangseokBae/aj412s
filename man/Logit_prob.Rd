@@ -7,6 +7,7 @@ Logit_prob()
 \description{
 Calculating probability from Logit Regression Results
 }
+
 \examples{
 
 # Option1:
