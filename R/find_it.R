@@ -1,16 +1,9 @@
 find_it<-function(clue_x, index_var, dep_var ) {
-	r = c()
-	countx = 0
+	n<-length(dep_var)
+	for(i in 1:n) {
 	
-	for(i in 1:length(dep_var)) {
-    
-	if(clue_x == index_var[i]) { 
-		r <- c(r, dep_var[i]) 
-		countx <- countx+1 }
+	if( is.na(index_var[i])) { 
+	next}
 	
-	}
-	
-	if(countx==0) {r<-c(NA)}
-	return(r)	
-}
-
+    if(clue_x == index_var[i]) { cat("Input value:",index_var[i], ", Index:",i, ", Search value:",  dep_var[i], '\n')}
+    }}

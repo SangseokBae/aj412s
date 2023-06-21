@@ -9,30 +9,19 @@ Making dummy variables -- Original record is character
 }
 \examples{
 
-library(readxl)
+## mkdum()À» »ç¿ëÇÏ·Á¸é ÀÔ·Âº¯¼ö ÇüÅÂ´Â ¹İµå½Ã numeric()
+## ÀÔ·Âº¯¼ö ÇüÅÂ°¡ character()ÀÌ¸é numeric()À¸·Î º¯°æ
 
-## mkdum()ì„ ì‚¬ìš©í•˜ë ¤ë©´ ì…ë ¥ë³€ìˆ˜ í˜•íƒœëŠ” ë°˜ë“œì‹œ numeric()
-## ì…ë ¥ë³€ìˆ˜ í˜•íƒœê°€ character()ì´ë©´ numeric()ìœ¼ë¡œ ë³€ê²½
+## NOT Working command
+# Adata$edu_dums<-cbind(Adata, mkdum(Adata$edu))
+# Adata$edu_dums(X) -> Adata(O)
 
-> library(readxl)
-> Adata<-read_excel('ìë£Œ2.xlsx', sheet=2, skip=1)
-> xtabs(~Adata$brand)
-Adata$brand
-Ford   GM   HD 
-  21   12   15 
-
-## mkdumì„ ì‚¬ìš©í•´ ë”ë¯¸ë³€ìˆ˜ ìƒì„± ì‹œ, NAê°€ ìˆì–´ë„ ë¬´ê´€í•¨
-> tmp<-mkdum(Adata$brand2)
-> Adata<-cbind(Adata, tmp)
-
-> ## mkdumì˜ ì£¼ìš” ì½”ë”©ì€ ì•„ë˜ì™€ ê°™ë‹¤
-> ## Adata$brand2<-NA
-## ifë¬¸ì„ ì‚¬ìš©í•œ ë”ë¯¸ë³€ìˆ˜ ìƒì„± ì‹œ, ë°ì´í„°ì— NAê°€ ì—†ì–´ì•¼ í•¨
-for(i in 1:nrow(Adata)){
-  if(Adata$brand[i]=='Ford') {Adata$brand2[i]<-1}
-  else if(Adata$brand[i]=='GM') {Adata$brand2[i]<-2}
-  else{Adata$brand2[i]<-3}
-}
+## How To Use:
+# NAºÎÅÍ Á¦°Å
+Adata<-Adata[complete.cases(Adata), ]
+Adata<-cbind(Adata, mkdum(Adata$gender))
+Insert dummy variable name : µ¿ÀÏÇÑ º¯¼ö¸íÀ» ÀÔ·Â
+Adata¿¡ »õ·Î »ı¼ºµÇ´Â º¯¼ö: gender1, gender2
 
   
 }

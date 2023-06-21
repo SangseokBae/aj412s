@@ -1,21 +1,20 @@
-\name{Logit_prob}
-\alias{Logit_prob}
-\title{Logit_prob}
+\name{logit_prob}
+\alias{logit_prob}
+\title{logit_prob}
 \usage{
-Logit_prob()
+logit_prob()
 }
 \description{
 Calculating probability from Logit Regression Results
 }
-
 \examples{
 
 # Option1:
 
-Logit_prob( LogitResult )
+logit_prob( LogitResult )
 
 # Option2:
 
-Logit_prob( LogitResult, c(1,0,0,4,2) )
+logit_prob( LogitResult, c(1,0,0,4,2) )
 
 }
