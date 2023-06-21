@@ -57,7 +57,7 @@ invisible(readline(prompt="Press [enter] to continue"))
 
 cat(" ", '\n')
 cat("## 문자 레코드를 숫자로 바꾸기 -------- ", '\n')
-cat("library(aj412s)
+cat("library(aj412s) ", '\n')
 cat("df$브랜드2<-c2n(df$브랜드) ", '\n')
 cat(" ", '\n')
 cat("## 여러 개의 변수들을 numeric으로 지정하기 -------- ", '\n')
