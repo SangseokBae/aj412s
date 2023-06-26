@@ -1,6 +1,6 @@
 \name{Mpower}
 \alias{Mpower}
-\title{Title: 상태전환표를 행방향 확률형태로 만든 후, n기간 후의 상태를 예측하기 위한 명령문}
+\title{Title: multiplying a matrix}
 \usage{
 Mposer()
 }

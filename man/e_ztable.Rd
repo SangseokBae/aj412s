@@ -1,8 +1,8 @@
-\name{e_moonBook}
-\alias{e_moonBook}
+\name{e_ztable}
+\alias{e_ztable}
 \title{Making Tables}
 \usage{
-e_moonBook()
+e_ztable()
 }
 \description{
 Making Tables

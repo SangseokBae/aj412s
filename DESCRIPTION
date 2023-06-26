@@ -1,10 +1,12 @@
 Package: aj412s
 Type: Package
-Title:aj412s
-Version: 0.0.2303
+Title: aj412s
+Version: 0.0.3
 Author: Sangseok Bae
 Maintainer: <ssb9018@ajou.ac.kr>
 Description: Package for the class 'Statistics for Public Administration and Data Analysis'
 License: GPL-v3.0
 Encoding: UTF-8
 LazyData: true
+Depends: 
+    R (>= 2.10)

@@ -1,6 +1,6 @@
 \name{e_APTdata}
 \alias{e_APTdata}
-\title{부동산 실거래 공개시스템 아파트가격 데이터를 분석 가능한 형태로 전환}
+\title{Modify Real Estate data for analysis}
 \usage{
 e_APTdata()
 }

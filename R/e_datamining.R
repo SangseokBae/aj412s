@@ -79,6 +79,12 @@ cat(" ", '\n')
 
 invisible(readline(prompt="Press [enter] to continue"))
 cat(" ", '\n')
+cat("subset(df, brand=='KIA' | brand=='GM' ,select=c(1,2,3,4)) ", '\n')
+cat("subset(df, grepl('KI', df$brand) ,select=c(1,2,3,4)) ", '\n')
+cat(" ", '\n')
+
+invisible(readline(prompt="Press [enter] to continue"))
+cat(" ", '\n')
 cat("## dplyr사용법 ------- ", '\n')
 cat("df %>% group_by(브랜드)  ", '\n')
 cat("      %>% summarize(편의성평균=mean(편의성, na.rm=T), 표준편차=sd(편의성, na.rm=T), 자료수=n())  ", '\n')
