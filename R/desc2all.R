@@ -1,6 +1,6 @@
 ## 모든 변수들의 평균을 구하는 함수
 
-desc2all<-function(A0_data){
+desc2all<-function(A0_data, mydigits=3){
 
 tempx<-ncol(A0_data)
 
@@ -117,6 +117,10 @@ rownames(Bdata)[8] <- c('Q3')
 rownames(Bdata)[9] <- c('  Min')
 rownames(Bdata)[10] <- c('  Max')
 rownames(Bdata)[11] <- c('  S/M:Variation')
+
+options(digits=mydigits)
+options(warn=-1)
+
 return(t(Bdata))
 }
 

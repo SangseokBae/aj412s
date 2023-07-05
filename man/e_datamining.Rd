@@ -58,22 +58,29 @@ sink('결과저장.csv')
 sink() 
 
 ## dplyr사용법 -------
+
 df %>% group_by(브랜드) 
       %>% summarize(편의성평균=mean(편의성, na.rm=T), 표준편차=sd(편의성, na.rm=T), 자료수=n()) 
+
 df %>% select(브랜드, 편의성)
+
 df %>% filter(변수E==2015 & (변수F=='C' | 변수F=='G') )
+
 df %>% arrange(연령대)
+
 df <- rename(df, 새변수명=편의성)
+또는, colnames(df)[1]<-c('피조사자이름')
+
 merge(data0, data1, by='index')
    %>% merge(data2, by='index')
    %>% merge(data3, by='index')
    
------------------------------------------------------
+## xtabs사용법 --------------
 xtabs를 사용해 막대그래프 그리기
 xtabs(~df$성별+df$브랜드) 
 barplot(xtabs(~df$성별+df$브랜드), beside=T, horiz=F, ylab='빈도수') 
 
------------------------------------------------------
+## rowSums 및 rowMeans ---------
 rowSums 및 rowMeans 명령문 
 Adata$check<-rowSums(Adata[, c(3:4)], na.rm=T) 
 Adata$check<-rowMeans(Adata[, c(3:4)], na.rm=T) 

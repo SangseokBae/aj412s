@@ -1,9 +1,10 @@
 # How To Use:
-# cn<-quantile(Adata$edu, c(.25, .5, .75))
+# quantile로 지정: cn<-quantile(Adata$edu, c(.25, .5, .75))
+# cn을 직접 지정하기: cn<-c(1000, 4000, 7000) ','\n')
 # Adata$edu2<-mkgroup(Adata$edu, cn)
 
 mkgroup<-function(target_variable, CuttingNumber) {
-  
+ 
   c2n <- function(x_x01){   
      groups = unique(x_x01)   
      groups= sort(groups)

@@ -1,41 +1,46 @@
-mklog<-function(df_logdataset){
+mklog<-function(name_dataset, select_columns) {
+  
+  if(class(name_dataset)!="data.frame") {
+	cat("  CORRECT COMMAND: df<-mklog(data.frame, number of column)", '\n')
+	cat("  EXAMPLE:         df<-mklog(data.frame, 3)", '\n')
+	return(0) }
+	
+  if(class(select_columns)!="numeric") {
+	cat("  CORRECT COMMAND: df<-mklog(data.frame, number of column)", '\n')
+	cat("  EXAMPLE:         df<-mklog(data.frame, 3)", '\n')
+	return(0) }
+     
+  tmp<-(name_dataset[select_columns])
+  colnames(tmp)<-c("log_")
+  n<-nrow(tmp)
+        
+  for(i in 1:n){
+      
+	  if (is.na(tmp$log_[i])) {tmp$log_[i]<-NA}
+      
+	  else if(tmp$log_[i]==0) {
+	  cat("Since there is X==0 case, the log-change can not be used!",'\n')
+	  return(name_dataset)
+	  break}
+      
+	  else if(tmp$log_[i]>0 & tmp$log_[i]<1) {
+	  cat('Since 0<X<1 case, the log-change can not be used!', '\n')
+	  return(name_dataset)
+	  break}
+      
+	  else if(tmp$log_[i]<0 & tmp$log_[i]>-1) {
+	  cat('Since -1<X<0 case, the log-change of X can not be used!')
+	  return(name_dataset)
+	  break}
+	  
+	  else if(tmp$log_[i]>=1) {tmp$log_[i]<-log(tmp$log_[i])}
+	  
+      else if(tmp$log_[i] <= -1) {tmp$log_[i]<- ( -1*log(-1*tmp$log_[i]))}
+	  
+	  }
 
-df_logdataset<-as.data.frame(df_logdataset)
-
-ncolumns<-ncol(df_logdataset)
-
-if(ncolumns==1) {
-n<-nrow(df_logdataset)
-tmp_df_logdataset<-rep(1,n)
-df_logdataset<-cbind(df_logdataset,tmp_df_logdataset)}
-
-else{
-n<-nrow(df_logdataset)
-df_logdataset<-cbind(df_logdataset, df_logdataset)}
-
-
-for(j in 1:ncolumns){
-ans <- "log_"
-tmp_name<-colnames(df_logdataset)[j+ncolumns]
-colnames(df_logdataset)[j+ncolumns]<-paste0(ans,tmp_name, sep='' )
-df_logdataset[j+ncolumns]<-NA
-}
-
-for(j in 1:ncolumns){
-for(i in 1:n){
-if (is.na(df_logdataset[i,j])) {df_logdataset[i, j+ncolumns]<-NA}
-else if(df_logdataset[i,j]==0) {df_logdataset[i, j+ncolumns]<-0 }
-else if(df_logdataset[i,j]>0) {df_logdataset[i, j+ncolumns]<-log(df_logdataset[i,j])}
-else {df_logdataset[i, j+ncolumns]<- ( -1*log(-1*df_logdataset[i,j]))} 
- }
-}
-
-df_logdataset <-df_logdataset[ , -c(1:ncolumns)]
-
-if(ncolumns==1) {
-df_logdataset<-as.vector(df_logdataset) }
-else { df_logdataset<-as.data.frame(df_logdataset) }
-
-return(df_logdataset)
+  colnames(tmp) <- paste0( colnames(tmp) , colnames(name_dataset[select_columns]) , sep='')
+  name_dataset2 <- cbind(name_dataset, tmp)
+  return(name_dataset2)
 
 }

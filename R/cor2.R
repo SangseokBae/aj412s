@@ -21,7 +21,7 @@ cat('*** Number of Data : ', nrow(k8_dataset), '\n')
 
 MYcorrelation1<-round( cor(k8_dataset, method='pearson') , 2)
 MYcorrelation2<-MYcorrelation1
-MYcorrelation2[lower.tri(MYcorrelation1)] <- ''
+MYcorrelation2[upper.tri(MYcorrelation1)] <- ''
 MYcorrelation3<-as.data.frame(MYcorrelation2)
 return(MYcorrelation3)
 } 

@@ -10,10 +10,12 @@ Making log dataset
 \examples{
 
 ## make log data for one varialbe
-df12$logdebt<-mklog(df12$debt)
+tmp<-mklog(dataset, nth variable)
 
-## make log data for various varialbe
-tmp<-mklog(df12[,c(5:8)])
-df12<-cbind(df12, tmp)
+EXAMPLE:
+library(aj412s)
+df<-BasicData
+tmp<-mklog(dataset, nth variable)
+tmp<-mklog(df,8)
 
 }

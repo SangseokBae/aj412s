@@ -1,4 +1,4 @@
-# How To Use: Adata$index<-mkindex(Adata) 
+# How To Use: df$index<-mkindex(df) 
 
 mkindex<-function(tmp_data){
 

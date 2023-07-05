@@ -2,6 +2,8 @@
 
 mkdate<-function(date0) {
 
+cat('Input date format: 2001.01 or 2001-01','\n')
+
 tmp_dataset<-as.data.frame(date0)
 n<-nrow(tmp_dataset)
 temp1<-sort(unique(date0))
