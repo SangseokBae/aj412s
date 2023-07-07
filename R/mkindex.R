@@ -2,14 +2,19 @@
 
 mkindex<-function(tmp_data){
 
+if (base::missing(tmp_data)) {
+    return(cat("  df<-mkindex(df)") ) }
+
 n<-nrow(tmp_data)
-tmp_index00=c()
+index00=c()
 
 for(i in 1:n){
-tmp_index00=c(tmp_index00, i)
+index00=c(index00, i)
 }
 
-return(tmp_index00)
+tmp_data<-cbind(tmp_data, index00)
+
+return(tmp_data)
 
 }
 

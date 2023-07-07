@@ -1,9 +1,12 @@
 # How To Use:
-# quantile로 지정: cn<-quantile(Adata$edu, c(.25, .5, .75))
+# quantile로 지정: cn<-quantile(df$edu, c(.25, .5, .75))
 # cn을 직접 지정하기: cn<-c(1000, 4000, 7000) ','\n')
-# Adata$edu2<-mkgroup(Adata$edu, cn)
+# df$edu2<-mkgroup(df$edu, cn)
 
 mkgroup<-function(target_variable, CuttingNumber) {
+ 
+   if (base::missing(target_variable)) {
+	    return(cat("  df$edu2<-mkgroup(df$edu, cn)  *NOTE: cn<-c(-0.36, 0.33, 0.78 ) or cn<-quantile(df$edu, c(.25, .5, .75)) ")) }
  
   c2n <- function(x_x01){   
      groups = unique(x_x01)   

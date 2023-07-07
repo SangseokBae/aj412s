@@ -8,6 +8,7 @@ percent_change()
 Making percent change of variables
 }
 \examples{
-Adata<-read.csv('Data20_Mroz.csv', header=T)
-Adata$pchange<-percent_change(Adata$kospi)
+
+df$pch<-percent_change(df$kospi)
+
 }

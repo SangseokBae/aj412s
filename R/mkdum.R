@@ -1,5 +1,8 @@
 mkdum <- function(name_dataset, select_columns) {
   
+  if (base::missing(name_dataset)) {
+	    return(cat("  df<-mkdum(df, 2)  *NOTE: making dummies for brand(2nd column of dataset) "))  }
+  
   if(class(name_dataset)!="data.frame") {
 	cat("  CORRECT COMMAND: df<-mkdum(data.frame, number of column)", '\n')
 	cat("  EXAMPLE:         df<-mkdum(data.frame, 3)", '\n')

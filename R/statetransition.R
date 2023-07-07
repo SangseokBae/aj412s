@@ -1,10 +1,21 @@
 # --- 상태전환 매트릭스 만들기
 statetransition <- function(Adata){
     
-	cat('# 데이터셋은 두 개의 column으로만 구성되어 있음','\n')
-	cat('# 데이터셋의 두 column은 상태를 숫자로 표시하고 있음. 예) 1은 소득1분위, 2는 소득2분위 ... ','\n')
-	cat('# 데이터셋의 첫 번째 column은 변화 전의 상태','\n')
-	cat('# 데이터셋의 두 번째 column은 변화 후의 상태','\n')
+	if (base::missing(Adata)) {
+	cat("  * NOTE: 소득분위 변화 테이블",'\n')
+	cat("    A1은 2001년의 소득분위를 나타내는 column ",'\n')
+	cat("    A2는 2002년의 소득분위를 나타내는 column ",'\n')
+	cat("    A0<-c('김준일','강명일','윤창일','김흥이','박성삼','김서삼') ",'\n')
+	cat("    A1<-c(1,2,1,3,1,4) ",'\n')
+	cat("    A2<-c(1,2,2,3,3,3) ",'\n')
+	cat("    df<-as.data.frame(cbind(A0,A1,A2)) ",'\n')
+	cat("  * 주의: 분석에 사용되는 df2는 A1과 A2만 포함하고, data.frame형태이며, A1과 A2는 모두 numeric ",'\n')
+	cat("    df2<-df[,c(2:3)] ",'\n')
+	cat("    df2<-lapply(df2, as.numeric)  ",'\n')
+	cat("    df2<-as.data.frame(df2)  ",'\n')
+	cat("    tmp <- statetransition(df2)  ",'\n')
+	return(cat("    round( prop.table(as.matrix(tmp), 1), 2)*100 "))  }
+	
 	
 	Nrange1<-sum(unique(Adata[,1])>0)
 	Nrange2<-sum(unique(Adata[,2])>0)

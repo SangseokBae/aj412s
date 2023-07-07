@@ -1,5 +1,8 @@
 cor2<-function(k0_dataset){
 
+if (base::missing(k0_dataset)) {
+	 return(cat("  cor2(df) "))}
+
 MYc2n <- function(x){
      groups = unique(x)
      groups= sort(groups)

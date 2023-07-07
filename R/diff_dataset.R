@@ -3,6 +3,12 @@ diff_dataset<-function(AdataSet, T){
 ## AdataSet = name of dataset, 2019~2022 : T=4
 ## dplyr package::lag()
 
+if (base::missing(AdataSet)) {
+    return(	
+	cat("  tmp<-diff_dataset(panel_dataset, 4)  *NOTE: 4=year of panel data", "\n")
+	)}
+
+
 AdataSet<-as.data.frame(AdataSet)
 ncolumns<-ncol(AdataSet)
 

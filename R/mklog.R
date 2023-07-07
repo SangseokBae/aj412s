@@ -1,5 +1,8 @@
 mklog<-function(name_dataset, select_columns) {
   
+  if (base::missing(name_dataset)) {
+    return(cat("  df<-mklog(df, 9)  *NOTE: 9 = 9th variable for log-transformation  ") ) }
+  
   if(class(name_dataset)!="data.frame") {
 	cat("  CORRECT COMMAND: df<-mklog(data.frame, number of column)", '\n')
 	cat("  EXAMPLE:         df<-mklog(data.frame, 3)", '\n')

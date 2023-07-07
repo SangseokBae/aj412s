@@ -15,7 +15,7 @@ tmp<-mklog(dataset, nth variable)
 EXAMPLE:
 library(aj412s)
 df<-BasicData
-tmp<-mklog(dataset, nth variable)
-tmp<-mklog(df,8)
+df<-mklog(dataset, nth variable)
+df<-mklog(df,8)
 
 }

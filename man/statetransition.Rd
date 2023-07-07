@@ -13,7 +13,8 @@ A1<-c(1,2,2,3,1,4)
 A2<-c(1,2,2,3,3,3)
 df<-as.data.frame(cbind(A1,A2))
 
-Trans<-statetransition(df)
+tmp <- statetransition(df)
+
 # 데이터셋은 두 개의 column으로만 구성되어 있음 
 # 데이터셋의 두 column은 상태를 숫자로 표시함
   예) 1은 소득1분위, 2는 소득2분위 ...  

@@ -8,7 +8,7 @@ c2n()
 Converting character into numbers
 }
 \examples{
-Adata<-read.csv('Data20_Mroz.csv', header=T)
-Adata$wc2<-c2n(Adata$wc)
-Adata$hc2<-c2n(Adata$hc)
+df<-read.csv('Data20_Mroz.csv', header=T)
+df$wc2<-c2n(df$wc)
+df$hc2<-c2n(df$hc)
 }

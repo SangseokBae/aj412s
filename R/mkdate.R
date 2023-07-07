@@ -2,7 +2,8 @@
 
 mkdate<-function(date0) {
 
-cat('Input date format: 2001.01 or 2001-01','\n')
+if (base::missing(date0)) {
+	    return(cat("  tmp<-mkdate(df$ptime) *NOTE: Input date format: 2001.01 or 2001-01 "))  }
 
 tmp_dataset<-as.data.frame(date0)
 n<-nrow(tmp_dataset)

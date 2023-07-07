@@ -1,6 +1,10 @@
 ## 활용법: logit_prob(로짓결과)
 
 logit_prob <- function( LogitResult, my_input=c(1) ){
+
+if (base::missing(LogitResult)) {
+	return(cat("  logit_prob( LogitResult, c(1,0,2) )  *NOTE: 1=constant, 0='value of X1', 2='value of X2' "))  }
+
 r=c()
 max.ylev<-2
 nvariables<-LogitResult$rank
