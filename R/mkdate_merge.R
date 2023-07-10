@@ -2,7 +2,7 @@ mkdate_merge<-function(df, ydata, mdata ){
 
 if (base::missing(df)) {
 	    cat("  Input: Year=2023 and Month=4 // Output: DATE_merge=2023-04-01    ", '\n')
-		return(cat("  df<-mkdate_merge(df, 2=number of year column, 3=number of month column) ") )  }
+		return(cat("  df<-mkdate_merge(df, 2=column number of year, 3=column number of month) ") )  }
 
 df<-as.data.frame(df)
 df[ ,ydata]<-as.character(df[ ,ydata])

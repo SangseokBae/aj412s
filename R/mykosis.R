@@ -21,7 +21,8 @@ mykosis<-function(KosisDataSet){
 if (base::missing(KosisDataSet)) {
     cat("  df$V1<-zoo::na.locf(df$V1) ", "\n")
 	cat("  NOTE: df = V1:지역명(예, 전국), V2:변수명(예, 제조업), V3:기업체수, V4:종사자수(명) ", "\n")
-    return(cat("  tmp<-mykosis(df) "))  }
+	cat("  df2<-df[,c(1,2,3)]  or  df2<-df[,c(1,2,4)]   ", "\n")
+    return(cat("  tmp<-mykosis(df2) "))  }
 
 
 colnames(KosisDataSet)<-c('V1', 'V2', 'V3')
