@@ -1,14 +1,11 @@
 e_plot<-function(explaining=0){
 if(explaining==0) {
-cat("  library(readxl) ", '\n')
 cat("# ------------------------------------------------- ", '\n')
-cat("  df<-read_excel('Data41_Time_series_data3.xlsx', skip=1) ", '\n') 
-cat("  ## 또는, df<-KoreaMacro # 내장데이터 사용", '\n') 
-cat("  df$date00<-mkdate(df$yearmonth) ", '\n')
-cat("  df$date00<-as.Date(df$date00) ", '\n')
-cat("  plot(df$date00, df$surplus, type='l', col='red', xlab='',ylab='', cex.lab=1.3) ", '\n')
+cat("  df<-KoreaMacro # 내장데이터 사용", '\n') 
+cat("  df$date0<-mkdate(df$yearmonth) ", '\n')
+cat("  plot(df$date0, df$surplus, type='l', col='red', xlab='',ylab='', cex.lab=1.3) ", '\n')
 cat("  par(new=TRUE) ", '\n')
-cat("  plot(df$date00, df$kospi, type='l', col='blue', xlab='',ylab='', axes=FALSE) ", '\n')
+cat("  plot(df$date0, df$kospi, type='l', col='blue', xlab='',ylab='', axes=FALSE) ", '\n')
 cat("  axis(side = 4, col = 'blue') ", '\n')
 cat("  mtext('KOSPI지수', side = 4, col='blue' , cex.lab=1.3) ", '\n')
 cat("  title(main='경상수지와 코스피지수',xlab='시간',ylab='경상수지', cex.lab=1.3, cex.main=1.3) ", '\n')
