@@ -16,7 +16,7 @@
 # ------------------------------------------------------
 
 mykosis<-function(KosisDataSet){
-## V1:지역명(예, 강북소방서), V2:변수명(예, 담배꽁초), V3~V4:데이터값, 
+## V1:지역명(예, 강북소방서), V2:변수명(예, 담배꽁초), V3~V4:데이터값
 
 if (base::missing(KosisDataSet)) {
     cat("  df$V1<-zoo::na.locf(df$V1) ", "\n")

@@ -1,11 +1,11 @@
 mklog<-function(name_dataset, select_columns) {
   
   if (base::missing(name_dataset)) {
-    return(cat("  df<-mklog(df, 9)  *NOTE: 9 = 9th variable for log-transformation  ") ) }
+    return(cat("  df<-mklog(df, 14)  *NOTE: 14 = 14th variable for log-transformation  ") ) }
   
   if(class(name_dataset)!="data.frame") {
 	cat("  CORRECT COMMAND: df<-mklog(data.frame, number of column)", '\n')
-	cat("  EXAMPLE:         df<-mklog(data.frame, 3)", '\n')
+	cat("  EXAMPLE:         df<-mklog(data.frame, 14)", '\n')
 	return(0) }
 	
   if(class(select_columns)!="numeric") {

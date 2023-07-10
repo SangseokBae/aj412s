@@ -2,7 +2,8 @@ e_plot<-function(explaining=0){
 if(explaining==0) {
 cat("# ------------------------------------------------- ", '\n')
 cat("  df<-KoreaMacro # 내장데이터 사용", '\n') 
-cat("  df$date0<-mkdate(df$yearmonth) ", '\n')
+cat("  df<-mkdate_form(df$yearmonth) ", '\n')
+cat("  colnames(df)[8]<-c('date0') ", '\n')
 cat("  plot(df$date0, df$surplus, type='l', col='red', xlab='',ylab='', cex.lab=1.3) ", '\n')
 cat("  par(new=TRUE) ", '\n')
 cat("  plot(df$date0, df$kospi, type='l', col='blue', xlab='',ylab='', axes=FALSE) ", '\n')
