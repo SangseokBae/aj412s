@@ -6,7 +6,7 @@ options(digits=mydigits)
 options(warn=-1)
 
 if (base::missing(A0_data)) {
-	    return(cat("  desc2all(df) or desc2all(df, 3) "))  }
+	    return(cat("  desc2(df) or desc2(df, 4)=desc2(df, mydigits) "))  }
 
 tempx<-ncol(A0_data)
 
