@@ -55,6 +55,20 @@ for(j in 1:nc){
  A0_data<-A0_data[ A0_data[,j] != -Inf, ]
 }
 
+## coverting character data into numeric variables
+c2n <- function(x){   
+	 groups = unique(x)   
+     groups= sort(groups)
+     tmp<-as.numeric(factor(x, levels=groups))
+	 return(tmp)
+}
+
+
+for(j in 1:nc){
+if( class(A0_data[,j])=="character" ) A0_data[,j]<-c2n(A0_data[,j])
+}
+
+
 ## coverting data into numeric variables
 index2<-c(1:nc)
 A0_data[,index2] <- lapply( A0_data[, index2], as.numeric)
