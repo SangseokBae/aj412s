@@ -1,8 +1,8 @@
-\name{desc2all}
-\alias{desc2all}
+\name{desc2}
+\alias{desc2}
 \title{Function of calculating mean,SD, and Quantile for all variables}
 \usage{
-desc2all()
+desc2()
 }
 \description{
 Function of calculating mean, SD, and Quantile for all variables
@@ -13,9 +13,9 @@ Function of calculating mean, SD, and Quantile for all variables
  df<-BasicData
  
  # default of digtis=3
- desc2all(df)
+ desc2(df)
  
  # Change digtis=5
- desc2all(df, 5)
+ desc2(df, 5)
  
 }

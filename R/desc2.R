@@ -1,6 +1,6 @@
 ## 모든 변수들의 평균을 구하는 함수
 
-desc2all<-function(A0_data, mydigits=2){
+desc2<-function(A0_data, mydigits=2){
 
 options(digits=mydigits)
 options(warn=-1)
