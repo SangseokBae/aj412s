@@ -3,7 +3,7 @@
 percent_change <- function(x) {
 
 if (base::missing(x)) {
+    cat("  To maker % , multiply the result by 100.  ", '\n')
     return(cat("  df$pch <- percent_change(df$kospi) "))  }
-
-
-  c(NA, (x[-1]/x[-length(x)]-1)*100 ) }
+  
+  c(NA, (x[-1]/x[-length(x)]-1) ) }
